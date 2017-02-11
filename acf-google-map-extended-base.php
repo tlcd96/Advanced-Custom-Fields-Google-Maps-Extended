@@ -27,7 +27,7 @@ class acf_field_google_map_extended extends acf_field {
       'center_lng'  => '110.20375',
       'zoom'      => '17',
       'scrollwheel' => 0,
-	  'api_key'=>'',
+	  'api_key'=>	'',
     );
     $this->l10n = array(
       'locating'      => __("Locating",'acf-gme'),

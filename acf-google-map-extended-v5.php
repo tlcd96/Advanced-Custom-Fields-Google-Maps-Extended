@@ -24,7 +24,7 @@ class acf_field_google_map_extended_v5 extends acf_field_google_map_extended {
   * @return n/a
   */
   function input_admin_enqueue_scripts() {
-    wp_register_script("googlemaps-api", "//maps.googleapis.com/maps/api/js?v=3&sensor=false&libraries=places",array(),'3',false);
+    wp_register_script("googlemaps-api", "//maps.googleapis.com/maps/api/js?v=3&sensor=false&libraries=places&key=".$this->defaults['api_key'],array(),'3',false);
     wp_register_script($this->settings['script-handle'], $this->settings['url'] . '/js/input.js', array($this->settings['acf-script-handle'],'jquery','googlemaps-api'), $this->settings['version'],false);
     wp_register_style($this->settings['script-handle'], $this->settings['url'] . '/css/input.css', array($this->settings['acf-script-handle']), $this->settings['version']); 
 
@@ -219,7 +219,7 @@ class acf_field_google_map_extended_v5 extends acf_field_google_map_extended {
     
     if( ! $field['required'] ) return $valid; // bail early if not required
     
-    if( empty($value) || empty($value['lat']) || empty($value['lng']) )  return false;
+    if( empty($value) || empty($value['lat']) || empty($value['lng']) || empty($value['api_key']))  return false;
 
     return $valid;
     
@@ -238,7 +238,7 @@ class acf_field_google_map_extended_v5 extends acf_field_google_map_extended {
   */
   function update_value( $value, $post_id, $field ) {
   
-    if( empty($value) || empty($value['lat']) || empty($value['lng']) ) {
+    if( empty($value) || empty($value['lat']) || empty($value['lng']) || empty($value['api_key']) ) {
       
       return false;
       
