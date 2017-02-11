@@ -100,7 +100,7 @@ class acf_field_google_map_extended_v4 extends acf_field_google_map_extended {
       <input type="hidden" class="input-<?php echo $k; ?>" name="<?php echo esc_attr($field['name']); ?>[<?php echo $k; ?>]" value="<?php echo esc_attr( $v ); ?>" autocomplete="off" />
     <?php endforeach; ?>
   </div>
-  
+  <?php print_r($field);?>
   <header>
     <input class="search" type="text" placeholder="<?php _e("Search for address...",'acf-gme'); ?>" value="<?php echo $field['value']['address']; ?>" autocomplete="off" />
     <a class="acf-gme-icon acf-gme-clear-location" title="<?php _e("Clear location", 'acf-gme'); ?>">
@@ -278,7 +278,7 @@ class acf_field_google_map_extended_v4 extends acf_field_google_map_extended {
   */
   function update_value( $value, $post_id, $field ) {
   
-    if( empty($value) || empty($value['lat']) || empty($value['api_key']) || empty($value['lng']) ) {
+    if( empty($value) || empty($value['lat']) || empty($value['lng']) ) {
       
       return false;
       
