@@ -93,7 +93,6 @@ class acf_field_google_map_extended_v5 extends acf_field_google_map_extended {
     <?php endforeach; ?>
   </div>
 
-  <?php print_r($field);?>
   <header>
     <input class="search" type="text" placeholder="<?php _e("Search for address...",'acf-gme'); ?>" value="<?php echo $field['value']['address']; ?>" autocomplete="off" />
     <a class="acf-gme-icon acf-gme-clear-location" title="<?php _e("Clear location", 'acf-gme'); ?>">
