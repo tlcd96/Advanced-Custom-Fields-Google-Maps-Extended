@@ -65,7 +65,7 @@ class acf_field_google_map_extended_v5 extends acf_field_google_map_extended {
       }
     }
 
-    wp_register_script("googlemaps-api", "//maps.googleapis.com/maps/api/js?v=3&sensor=false&libraries=places&key=".$field['value']['api_key'],array(),'3',false);
+    wp_register_script("googlemaps-api", "//maps.googleapis.com/maps/api/js?v=3&sensor=false&libraries=places&key=".$field['api_key'],array(),'3',false);
     wp_enqueue_script("googlemaps-api");
     // override default settings for map zoom and center with the ones saved with the field value
     if( !empty($field['value']['zoom']) ) $field['zoom'] = $field['value']['zoom'];

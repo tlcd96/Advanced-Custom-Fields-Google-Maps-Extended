@@ -59,7 +59,7 @@ class acf_field_google_map_extended_v4 extends acf_field_google_map_extended {
       'center_lng'  => '',
 	  'api_key'		=> '',
     ));
-    wp_register_script("googlemaps-api", "//maps.googleapis.com/maps/api/js?v=3&sensor=false&libraries=places&key=".$field['value']['api_key'],array(),'3',false);
+    wp_register_script("googlemaps-api", "//maps.googleapis.com/maps/api/js?v=3&sensor=false&libraries=places&key=".$field['api_key'],array(),'3',false);
     wp_enqueue_script("googlemaps-api");
     // populate default options
     foreach( $this->defaults as $k => $v ) {
