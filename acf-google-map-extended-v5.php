@@ -24,7 +24,7 @@ class acf_field_google_map_extended_v5 extends acf_field_google_map_extended {
   * @return n/a
   */
   function input_admin_enqueue_scripts() {
-    wp_register_script("googlemaps-api", "//maps.googleapis.com/maps/api/js?v=3&sensor=false&libraries=places&key=".$this->defaults['api_key'],array(),'3',false);
+    //wp_register_script("googlemaps-api", "//maps.googleapis.com/maps/api/js?v=3&sensor=false&libraries=places&key=".$this->defaults['api_key'],array(),'3',false);
     wp_register_script($this->settings['script-handle'], $this->settings['url'] . '/js/input.js', array($this->settings['acf-script-handle'],'jquery','googlemaps-api'), $this->settings['version'],false);
     wp_register_style($this->settings['script-handle'], $this->settings['url'] . '/css/input.css', array($this->settings['acf-script-handle']), $this->settings['version']); 
 
@@ -64,7 +64,9 @@ class acf_field_google_map_extended_v5 extends acf_field_google_map_extended {
         $field[$k] = $v;
       }
     }
-    
+
+    wp_register_script("googlemaps-api", "//maps.googleapis.com/maps/api/js?v=3&sensor=false&libraries=places&key=".$field['value']['api_key'],array(),'3',false);
+    wp_enqueue_script("googlemaps-api");
     // override default settings for map zoom and center with the ones saved with the field value
     if( !empty($field['value']['zoom']) ) $field['zoom'] = $field['value']['zoom'];
     if( !empty($field['value']['center_lat']) ) $field['center_lat'] = $field['value']['center_lat'];

@@ -25,7 +25,7 @@ class acf_field_google_map_extended_v4 extends acf_field_google_map_extended {
   * @return n/a
   */
   function input_admin_enqueue_scripts() {
-    wp_register_script("googlemaps-api", "//maps.googleapis.com/maps/api/js?v=3&sensor=false&libraries=places&key=".$this->defaults['api_key'],array(),'3',false);
+    //wp_register_script("googlemaps-api", "//maps.googleapis.com/maps/api/js?v=3&sensor=false&libraries=places&key=".$field['value']['api_key'],array(),'3',false);
     //workaround script blocking ACF ver 4 from loading google maps twice
     wp_register_script('acf-input-google-load-workaround', $this->settings['url'] . '/js/acf4-fix.js', array('googlemaps-api'), $this->settings['version'],false);
     wp_register_script($this->settings['script-handle'], $this->settings['url'] . '/js/input.js', array('acf-input-google-load-workaround',$this->settings['acf-script-handle'],'jquery','googlemaps-api'), $this->settings['version'],false);
@@ -59,8 +59,8 @@ class acf_field_google_map_extended_v4 extends acf_field_google_map_extended {
       'center_lng'  => '',
 	  'api_key'		=> '',
     ));
-    
-    
+    wp_register_script("googlemaps-api", "//maps.googleapis.com/maps/api/js?v=3&sensor=false&libraries=places&key=".$field['value']['api_key'],array(),'3',false);
+    wp_enqueue_script("googlemaps-api");
     // populate default options
     foreach( $this->defaults as $k => $v ) {
       if( empty($field[$k]) ) {
