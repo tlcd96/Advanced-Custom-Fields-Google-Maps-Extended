@@ -3,7 +3,7 @@
 Plugin Name: ACF: Google Map Extended
 Plugin URI: https://github.com/codewahoo/acf-gme
 Description: ACF field. Saves map center, zoom level. Disables map zooming on scroll. Shows location coordinates. Bonus for programmers.
-Version: 1.0.3
+Version: 1.0.4
 Author: CodeFish
 Author URI: http://code.fish
 License: GPLv2

@@ -115,6 +115,10 @@ Please see [code examples at ACF website](http://www.advancedcustomfields.com/re
 
 == Changelog ==
 
+= 1.0.4 =
+
+* Corrected the user input's
+
 = 1.0.3 =
 
 * Addered the API key to the field creation screen
