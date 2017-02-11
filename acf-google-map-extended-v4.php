@@ -56,7 +56,8 @@ class acf_field_google_map_extended_v4 extends acf_field_google_map_extended {
       'lng'         => '',
       'zoom'        => '',
       'center_lat'  => '',
-      'center_lng'  => ''
+      'center_lng'  => '',
+	  'api_key'=>'',
     ));
     
     
@@ -242,6 +243,24 @@ class acf_field_google_map_extended_v4 extends acf_field_google_map_extended {
     ?>
   </td>
 </tr>
+<tr class="field_option field_option_<?php echo $this->name; ?>">
+  <td class="label">
+    <label><?php _e('Google Maps API Key','acf-gme'); ?></label>
+    <p class="description"><?php _e("set the API KEY Here",'acf-gme'); ?></p>
+  </td>
+  <td>
+    <?php
+    
+    do_action('acf/create_field', array(
+      'type'      => 'text',
+      'name'      => 'fields['.$key.'][api_key]',
+      'value'      => $field['api_key'],
+      'append'    => '',
+      'placeholder'  => $this->defaults['api_key']
+    ));    
+    ?>
+  </td>
+</tr>
 		<?php
 		
 	}
@@ -259,7 +278,7 @@ class acf_field_google_map_extended_v4 extends acf_field_google_map_extended {
   */
   function update_value( $value, $post_id, $field ) {
   
-    if( empty($value) || empty($value['lat']) || empty($value['lng']) ) {
+    if( empty($value) || empty($value['lat']) || empty($value['api_key']) || empty($value['lng']) ) {
       
       return false;
       

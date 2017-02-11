@@ -53,7 +53,8 @@ class acf_field_google_map_extended_v5 extends acf_field_google_map_extended {
       'lng'         => '',
       'zoom'        => '',
       'center_lat'  => '',
-      'center_lng'  => ''
+      'center_lng'  => '',
+	  'api_key'		=> '',
     ));
     
     
@@ -188,6 +189,16 @@ class acf_field_google_map_extended_v5 extends acf_field_google_map_extended {
       'name'      => 'height',
       'append'    => 'px',
       'placeholder'  => $this->defaults['height']
+    ));
+   
+    // google maps api key
+    acf_render_field_setting( $field, array(
+      'label'      => __('Google Maps API Key','acf-gme'),
+      'instructions'  => __('Set the API key from google maps here','acf-gme'),
+      'type'      => 'text',
+      'name'      => 'api_key',
+      'append'    => '',
+      'placeholder'  => $this->defaults['api_key']
     ));
     
   }
