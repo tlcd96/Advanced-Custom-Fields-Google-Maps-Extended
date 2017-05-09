@@ -53,7 +53,14 @@ function new_map( $el ) {
 		center		: new google.maps.LatLng(0, 0),
 		mapTypeId	: google.maps.MapTypeId.ROADMAP,
 		minZoom: zoomRange[0] || 17,
-		maxZoom: zoomRange[1] || 20,                
+		maxZoom: zoomRange[1] || 20,          
+		draggable: false,
+		scrollwheel: false,
+		mapTypeControl: false,
+		scaleControl: false,
+		streetViewControl: false,
+		rotateControl: false,
+		zoomControl: true,      
 	};
 	
 	
