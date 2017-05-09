@@ -1,5 +1,5 @@
 === ACF: Google Map Extended ===
-Contributors: codewahoo
+Contributors: codewahoo, viewup
 Tags: admin, acf, advanced custom field, custom field, map field, google maps, maps, gmap, map, map zoom, map scroll, coordinates
 Requires at least: 3.8
 Tested up to: 4.4
