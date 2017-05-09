@@ -42,6 +42,7 @@ The plugin is translated to:
 = 1.0.4 =
 
 * Corrected the user input's
+* Add shortcode feature
 
 = 1.0.3 =
 
