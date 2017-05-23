@@ -10,6 +10,8 @@
   */
     function acf_gme_shortcode($atts){
 
+        global $acf_gme_data;
+
         $atts = shortcode_atts( array(
             'api_key' => '',
             'post_id' => '',
@@ -22,7 +24,6 @@
             'animation' => '',
         ), $atts, $shortcode_name);
 
-        include_once 'acf-google-map-extended-sc-helpers.php'; 
         include_once 'acf-google-map-extended-sc-single-marker.php';        
     }
 

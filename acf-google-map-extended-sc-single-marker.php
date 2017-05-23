@@ -9,7 +9,7 @@
 
     if( !empty($location) ):
 ?>
-    <div class="acf-map" data-zoom="<?= $location['zoom']; ?>" data-zoom-range="<?= $atts['zoom_range']; ?>">
+    <div class="acf-map" style="width: <?= $atts['width']; ?>; height: <?= $atts['height']; ?>" data-zoom="<?= $location['zoom']; ?>" data-zoom-range="<?= $atts['zoom_range']; ?>">
         <div class="marker" data-lat="<?= $location['lat']; ?>" data-lng="<?= $location['lng']; ?>" data-icon="<?= $atts['icon']; ?>" data-animation="<?= $atts['animation']; ?>"></div>
     </div>
 <?php endif; ?>
