@@ -1,4 +1,8 @@
-// var jQueryGme = jQuery.noConflict(true);
+/*
+* helpers google maps
+* @see https://www.advancedcustomfields.com/resources/google-map/
+*/
+
 (function ($) {
 
     $.noConflict();

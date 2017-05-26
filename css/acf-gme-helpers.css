@@ -1,0 +1,13 @@
+/*
+* helpers google maps
+* @see https://www.advancedcustomfields.com/resources/google-map/
+*/
+
+.acf-map {
+    border: #ccc solid 1px;
+    margin: 20px 0;
+}
+
+.acf-map img {
+    max-width: inherit !important;
+}
